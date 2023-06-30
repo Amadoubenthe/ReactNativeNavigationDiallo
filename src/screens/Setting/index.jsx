@@ -1,12 +1,25 @@
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import React from 'react';
 
-const Setting = () => {
+const Setting = ({navigation}) => {
   return (
-    <View>
-      <Text>Setting</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Paramètres</Text>
+      <Button title="Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
+};
+
+const styles = {
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
 };
 
 export default Setting;

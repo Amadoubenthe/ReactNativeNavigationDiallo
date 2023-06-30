@@ -1,18 +1,17 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import React from 'react';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Profile</Text>
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -20,6 +19,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
   },
-});
+};
 
 export default Profile;

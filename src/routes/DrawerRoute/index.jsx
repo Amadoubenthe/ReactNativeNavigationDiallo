@@ -1,28 +1,31 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable prettier/prettier */
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import TabRoute from '../TabRoute';
 import StackRoute from '../StackRoute';
 
-// import TabRoutes from './tab.routes';
-// import StackRoutes from './stack.routes';
+const options = {
+  title: 'Accueil',
+  headerStyle: {
+    backgroundColor: '#f4511e',
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+};
 
 const Drawer = createDrawerNavigator();
 
 const DrawerRoute = () => {
   return (
     <Drawer.Navigator screenOptions={{title: ''}}>
+      <Drawer.Screen name="home" component={TabRoute} options={options} />
       <Drawer.Screen
-        name="home"
-        component={TabRoute}
-        options={{
-          drawerLabel: 'Accueil',
-        }}
-      />
-
-      <Drawer.Screen
-        name="profile"
+        name="settings"
         component={StackRoute}
         options={{
-          drawerLabel: 'Mon Profile',
+          drawerLabel: 'Paramètres',
         }}
       />
     </Drawer.Navigator>

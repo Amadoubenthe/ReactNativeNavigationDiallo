@@ -1,12 +1,12 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Profile from '../../screens/Profile';
+import Setting from '../../screens/Setting';
 
 const Stack = createNativeStackNavigator();
 
 const StackRoute = () => {
   return (
-    <Stack.Navigator screenOptions={{title: ''}}>
-      <Stack.Screen name="profile" component={Profile} />
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="home" component={Setting} />
     </Stack.Navigator>
   );
 };
